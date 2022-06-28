@@ -21,5 +21,11 @@ class Data_penitipan_model extends CI_model {
 
     }
 
-    
+    public function hapusDataPenitipan($id)
+    {
+        $this->db->where('id',$id);
+        $this->db->delete('data_penitipan');
+
+    }
+
 }

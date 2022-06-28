@@ -31,6 +31,8 @@
                         <?php foreach ($data_penitipan as $dpenitipan ) : ?>
                         <li class="list-group-item">
                             <?= $dpenitipan['nama'];?>
+                            <a href="<?=base_url();?>data_penitipan/hapus/<?= $dpenitipan['id'];?>" 
+                            class="btn btn-danger btnhps" onclick="return confirm('yakin ingin menghapus?')">Hapus</a>
                         
                         </li>
                         
