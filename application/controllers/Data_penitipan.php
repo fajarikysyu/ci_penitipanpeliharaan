@@ -58,12 +58,7 @@ class Data_penitipan extends CI_Controller
         redirect('data_penitipan');
     }
 
-    public function hapus2()
-    {
 
-        $this->db->empty_table('riwayat_penitipan');
-        redirect('data_penitipan/riwayat');
-    }
 
     public function detail($id)
     {
@@ -74,14 +69,7 @@ class Data_penitipan extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function riwayat_detail($id)
-    {
-        $data['judul'] = 'Riwayat Data Penitipan';
-        $data['riwayat_penitipan'] = $this->Data_penitipan_model->getRiwayatPenitipanByNama($id);
-        $this->load->view('templates/header', $data);
-        $this->load->view('data_penitipan/riwayat_detail', $data);
-        $this->load->view('templates/footer');
-    }
+
 
     public function ubah($id)
     {
@@ -114,17 +102,7 @@ class Data_penitipan extends CI_Controller
         }
     }
 
-    public function riwayat()
-    {
-        $data['judul'] = 'Riwayat Penitipan';
-        $data['riwayat_penitipan'] = $this->Data_penitipan_model->getAllRiwayat_penitipan();
-        if ($this->input->post('keyword')) {
-            $data['riwayat_penitipan'] = $this->Data_penitipan_model->cariRiwayatPenitipan();
-        }
-        $this->load->view('templates/header', $data);
-        $this->load->view('data_penitipan/riwayat', $data);
-        $this->load->view('templates/footer');
-    }
+
 
     public function dashboard()
     {
