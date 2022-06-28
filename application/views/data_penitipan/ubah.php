@@ -5,51 +5,72 @@
 
                     <div class="card">
             <div class="card-header">
-                Form Tambah Data Penitipan
+                Form Ubah Data Penitipan
                 </div>
                     <div class="card-body">
 
                         <form action="" method="post">
-
+                            <input type="hidden" name="id" value="<?= $data_penitipan['id'];?>">
                             <div class="form-group">
                                 <label for="Nama" class="form-label">Nama</label>
-                                <input type="text" name="nama" class="form-control" id="nama" placeholder="Isikan nama panggilan peliharaan" >
+                                <input type="text" name="nama" class="form-control" id="nama" 
+                                 value="<?= $data_penitipan['nama'];?>">
                                 <small class="form-text text-danger"><?= form_error('nama')?></small>
                             </div>
                             <div class="form-group">
                                 <label for="Notlp" class="form-label">Nomor Telepon</label>
-                                <input type="int" name="notlp" class="form-control" id="notlp" placeholder="Masukan nomor telepon owner" >
+                                <input type="int" name="notlp" class="form-control" id="notlp" 
+                                 value="<?= $data_penitipan['notlp'];?>">
+
                                 <small class="form-text text-danger"><?= form_error('notlp')?></small>
 
                             </div>
                             <div class="form-group">
                                 <label for="Pengawas" >Pengawas</label>
                                 <select class="form-control mt-2" id="pengawas" name="pengawas">
-                                    <option selected></option>
-                                    <option value="Asep Deep">Asep Deep</option>
-                                    <option value="Septi Amber">Septi Amber</option>
+                                    <?php foreach($pengawas as $p) :?>
+
+                                        <?php if($p == $data_penitipan['pengawas']) : ?>
+
+                                         <option value="<?= $p;?>" selected><?= $p;?></option>
+
+                                         <?php else : ?>
+                                        
+                                            <option value="<?= $p;?>"><?= $p;?></option>
+                                        
+                                        <?php endif;?>
+                                    <?php endforeach; ?>
                                 </select>
                                 <small class="form-text text-danger"><?= form_error('pengawas')?></small>
                                 
                             </div>
                             <div class="form-group">
                                 <label for="Email" class="form-label">Email</label>
-                                <input type="text" name="email" class="form-control" id="email" placeholder="email@gmail.com" >
+                                <input type="text" name="email" class="form-control" id="email"  
+                                value="<?= $data_penitipan['email'];?>">
+
                                 <small class="form-text text-danger"><?= form_error('email')?></small>
                             </div>
                             <div class="form-group">
                                 <label for="Jenis" >Jenis Peliharaan</label>
                                 <select class="form-control mt-2" id="jenis" name="jenis" >
-                                    <option selected></option>
-                                    <option value="Burung">Burung</option>
-                                    <option value="Anjing">Anjing</option>
-                                    <option value="Kucing">Kucing</option>
+                                    <?php foreach($jenis as $j) :?>
+                                        <?php if($j == $data_penitipan['jenis']) : ?>
+
+                                            <option value="<?= $j;?>" selected><?= $j;?></option>
+
+                                                <?php else : ?>
+
+                                                <option value="<?= $j;?>"><?= $j;?></option>
+
+                                        <?php endif;?>
+                                    <?php endforeach; ?>
                                 </select>
                                 <small class="form-text text-danger"><?= form_error('jenis')?></small>
                                 
                             </div>
 
-                            <button type="submit" name="tambah" class="btn btn-success mt-2">Tambah Data</button>
+                            <button type="submit" name="tambah" class="btn btn-primary mt-2">Ubah Data</button>
                             
 
                         </form>

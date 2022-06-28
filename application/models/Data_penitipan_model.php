@@ -14,6 +14,9 @@ class Data_penitipan_model extends CI_model {
             "notlp" => $this->input->post('notlp', true),
             "email" => $this->input->post('email', true),
             "jenis" => $this->input->post('jenis', true),
+            "pengawas" => $this->input->post('pengawas', true),
+
+            
             
     );
 
@@ -27,5 +30,30 @@ class Data_penitipan_model extends CI_model {
         $this->db->delete('data_penitipan');
 
     }
+    public function getDataPenitipanById($id)
+    {
+
+        return $this->db->get_where('data_penitipan',['id' => $id])->row_array();
+
+    }
+
+    public function ubahDataPenitipan()
+    {
+
+        $data = array(
+            "nama" => $this->input->post('nama', true),
+            "notlp" => $this->input->post('notlp', true),
+            "email" => $this->input->post('email', true),
+            "jenis" => $this->input->post('jenis', true),
+            "pengawas" => $this->input->post('pengawas', true),
+
+            
+            
+    );
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('data_penitipan',$data);
+
+    }
+
 
 }

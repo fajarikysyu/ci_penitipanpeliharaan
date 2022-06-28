@@ -22,17 +22,32 @@
                 </div>
 
             </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
 
+                    
+
+                </div>
+            </div>
 
                 <div class="row mt-3">
                     <div class="col-md-6">
                     <h4 >Daftar Peliharaan Dititipkan</h4>
+                        <?php if(empty($data_penitipan)) : ?>
+                            <div class="alert alert-danger" role="alert">
+                                Data pencarian tidak ditemukan
+                            </div>
+                        <?php endif;?>
                     <ul class="list-group">
                         <?php foreach ($data_penitipan as $dpenitipan ) : ?>
                         <li class="list-group-item">
                             <?= $dpenitipan['nama'];?>
                             <a href="<?=base_url();?>data_penitipan/hapus/<?= $dpenitipan['id'];?>" 
                             class="btn btn-danger btnhps" onclick="return confirm('yakin ingin menghapus?')">Hapus</a>
+                            <a href="<?=base_url();?>data_penitipan/ubah/<?= $dpenitipan['id'];?>" 
+                            class="btn btn-primary btnhps" >Ubah</a>
+                            <a href="<?=base_url();?>data_penitipan/detail/<?= $dpenitipan['id'];?>" 
+                            class="btn btn-success btnhps" >Detail</a>
                         
                         </li>
                         
@@ -43,10 +58,9 @@
                 </div>
 
 </div>
-
 <style>
-    .btnhps {
-        float :right;
+    .btnhps{
+        float : right;
+        margin : 3px;
     }
-
 </style>
