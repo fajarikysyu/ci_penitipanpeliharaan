@@ -25,7 +25,16 @@
             <div class="row mt-3">
                 <div class="col-md-6">
 
-                    
+                    <form action="" method="post">
+
+                        <div class="input-group ">
+                            <input type="text" class="form-control"
+                             placeholder="Cari Data" name="keyword">
+                            <button class="btn btn-outline-primary" type="submit">Button</button>
+                        </div>
+
+
+                    </form>
 
                 </div>
             </div>

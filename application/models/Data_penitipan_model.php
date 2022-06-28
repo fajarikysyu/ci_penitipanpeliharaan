@@ -55,5 +55,17 @@ class Data_penitipan_model extends CI_model {
 
     }
 
+    public function cariDataPenitipan()
+    {
+
+        $keyword = $this->input->post('keyword',true);
+        $this->db->like('nama', $keyword);
+        $this->db->or_like('jenis', $keyword);
+        $this->db->or_like('pengawas', $keyword);
+
+
+        return $this->db->get('data_penitipan')->result_array();
+
+    }
 
 }
