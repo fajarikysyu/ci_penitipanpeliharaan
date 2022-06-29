@@ -29,7 +29,6 @@ class Data_penitipan extends CI_Controller
 
         $data['judul'] = 'Form tambah Data Penitipan';
         $this->form_validation->set_rules('nama', 'Nama', 'required');
-        $this->form_validation->set_rules('NM_owner', 'NM_owner', 'required');
         $this->form_validation->set_rules('notlp', 'Notlp', 'required|numeric');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
         $this->form_validation->set_rules('jenis', 'Jenis', 'required');
@@ -74,14 +73,13 @@ class Data_penitipan extends CI_Controller
     public function ubah($id)
     {
 
-        $data['judul'] = 'Form Ubah Data Panti';
+        $data['judul'] = 'Form Ubah Data Penitipan';
         $data['data_penitipan'] = $this->Data_penitipan_model->getDataPenitipanById($id);
         $data['pengawas'] = ['Asep Deep', 'Septi Amber'];
         $data['jenis'] = ['Burung', 'Anjing', 'Kucing'];
 
 
         $this->form_validation->set_rules('nama', 'Nama', 'required');
-        $this->form_validation->set_rules('NM_owner', 'NM_owner', 'required');
         $this->form_validation->set_rules('notlp', 'Notlp', 'required|numeric');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
         $this->form_validation->set_rules('jenis', 'Jenis', 'required');
@@ -100,15 +98,5 @@ class Data_penitipan extends CI_Controller
 
             redirect('Data_penitipan');
         }
-    }
-
-
-
-    public function dashboard()
-    {
-        $data['judul'] = 'Penitipan Peliharaan';
-        $this->load->view('templates/header', $data);
-        $this->load->view('data_penitipan/dashboard');
-        $this->load->view('templates/footer');
     }
 }

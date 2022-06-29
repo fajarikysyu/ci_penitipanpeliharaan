@@ -1,8 +1,10 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
-            <h4 class="mt-4">Form merubah data penitipan</h4>
-
+            <h1 class="mt-4">Ubah data</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Mengubah data penitipan</li>
+            </ol>
             <div class="container">
 
                 <div class="row mt-3">
@@ -18,12 +20,8 @@
                                     <input type="hidden" name="id" value="<?= $data_penitipan['id']; ?>">
                                     <div class="form-group">
                                         <label for="Nama" class="form-label">Nama</label>
-                                        <input type="text" name="NM_owner" class="form-control mb-3" id="NM_owner" value="<?= $data_penitipan['NM_owner']; ?>">
+                                        <input type="text" name="nama" class="form-control" id="nama" value="<?= $data_penitipan['nama']; ?>">
                                         <small class="form-text text-danger"><?= form_error('nama') ?></small>
-                                    </div>
-                                    <input type="text" name="nama" class="form-control " id="nama" value="<?= $data_penitipan['nama']; ?>">
-                                    <small class="form-text text-danger"><?= form_error('nama') ?></small>
-                                    <div class="form-group">
                                     </div>
                                     <div class="form-group">
                                         <label for="Notlp" class="form-label">Nomor Telepon</label>

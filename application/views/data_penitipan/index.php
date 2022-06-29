@@ -62,8 +62,7 @@
                                         <a href=" <?= base_url(); ?>data_penitipan/ubah/<?= $dpenitipan['id']; ?>" class="dropdown-item btnhps">Ubah</a>
                                         <a href=" <?= base_url(); ?>data_penitipan/hapus/<?= $dpenitipan['id']; ?>" class="dropdown-item btnhps" onclick="return confirm('yakin ingin menghapus?')">Hapus</a>
                                     </div>
-                                    <a href="<?= base_url(); ?>data_penitipan/detail/<?= $dpenitipan['id']; ?>" class="btn btn-success btnhps">Detail</a>
-
+                                    <a href="<?= base_url(); ?>data_penitipan/detail/<?= $dpenitipan['id']; ?>" class="btn btn-primary btnhps">Detail</a>
                                 </li>
 
                             <?php endforeach; ?>

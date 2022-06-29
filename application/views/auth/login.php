@@ -3,7 +3,7 @@
     <!-- Outer Row -->
     <div class="row justify-content-center">
 
-        <div class="col-lg-5">
+        <div class="col-lg-6">
 
             <div class="card o-hidden border-0 shadow-lg my-5">
                 <div class="card-body p-0">
